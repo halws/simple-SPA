@@ -11,29 +11,86 @@
 <body>
     <div class="main-content">
         <div class="all-products page">
-            <h3>Our products</h3>
+            <h2>Our products</h2>
             <div class="filters">
                 <form>
-                    Checkboxes here
+                    <div class="filter-criteria">
+                        <span>Manufacturer</span><br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="apple">Apple</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="samsung">Samsung</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="htc">HTC</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="nokia">Nokia</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="zte">ZTE</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="sony">Sony</label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="onePlus">OnePlus</label>
+                        <br>
+                    </div>
+                    <hr>
+                    <div class="filter-criteria">
+                        <span>Screen Size</span><br>
+                        <label>
+                            <input type="checkbox" value="16" name="storage">16 GB</label><br>
+                        <label>
+                            <input type="checkbox" value="32" name="storage">32 GB</label><br>
+                    </div>
+                    <hr>
+                    <div class="filter-criteria">
+                        <span>OS</span><br>
+                        <label>
+                            <input type="checkbox" value="android" name="os">Android</label><br>
+                        <label>
+                            <input type="checkbox" value="ios" name="os">iOS</label><br>
+                        <label>
+                            <input type="checkbox" value="windows" name="os">Windows</label><br>
+                    </div>
+                    <hr>
+                    <div class="filter-criteria">
+                        <span>Camera</span><br>
+                        <label>
+                            <input type="checkbox" value="5" name="camera">5 Mpx</label><br>
+                        <label>
+                            <input type="checkbox" value="8" name="camera">8 Mpx</label><br>
+                        <label>
+                            <input type="checkbox" value="12" name="camera">12 Mpx</label><br>
+                        <label>
+                            <input type="checkbox" value="15" name="camera">15 Mpx</label><br>
+                    </div>
+                    <hr>
+                    <button class="btn btn-secondary" type="button">Clear filters</button>
                 </form>
             </div>
             <div class="container">
                 <ul class="products-list row">
                     <script id="products-template" type="x-handlebars-template">​ {{#each this}}
                         <li data-index="{{id}}" class=" col col-sm-6 col-md-4">
-                            <a href="#" class="product-photo"><img src="{{image.small}}" alt="{{name}}" /></a>
-                            <h2><a href="#"> {{name}} </a></h2>
-                            <ul class="product-description">
-                                <li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
-                                <li><span>Storage: </span>{{specs.storage}} GB</li>
-                                <li><span>OS: </span>{{specs.os}}</li>
-                                <li><span>Camera: </span>{{specs.camera}} Mpx</li>
-                            </ul>
-                            <div class="inner">
-                                <button class="btn btn-secondary" type="button">Buy Now!</button>
-                                <p class="product-price">{{price}}$</p>
+                            <div class="wrapper">
+                                <a href="#" class="product-photo"><img src="{{image.small}}" alt="{{name}}" /></a>
+                                <h2><a href="#"> {{name}} </a></h2>
+                                <ul class="product-description">
+                                    <li><span>Manufacturer: </span>{{specs.manufacturer}}</li>
+                                    <li><span>Storage: </span>{{specs.storage}} GB</li>
+                                    <li><span>OS: </span>{{specs.os}}</li>
+                                    <li><span>Camera: </span>{{specs.camera}} Mpx</li>
+                                </ul>
+                                <div class="inner">
+                                    <button class="btn btn-secondary" type="button">Buy Now!</button>
+                                    <p class="product-price">{{price}}$</p>
+                                </div>
+                                <div class="highlight"></div>
                             </div>
-                            <div class="highlight"></div>
                         </li>
                         {{/each}}
                     </script>
@@ -42,14 +99,13 @@
         </div>
         <div class="single-product page">
             <div class="overlay">
-                  <div class="preview-large">
-                <h3>Single product view</h3>
-                <img src="" />
-                <p></p>
-                <span class="close">&times;</span>
+                <div class="preview-large">
+                    <h3>Single product view</h3>
+                    <img src="" />
+                    <p></p>
+                    <span class="close">&times;</span>
+                </div>
             </div>
-            </div>
-          
         </div>
         <div class="error page">
             <h3>Sorry, something went wrong :(</h3>
